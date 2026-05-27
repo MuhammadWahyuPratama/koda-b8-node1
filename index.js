@@ -33,17 +33,24 @@ const musik = [
     }
 ];
 
-musik.forEach((artis) => {
+function createMusicFiles() {
+  musik.forEach((artis) => {
     artis.lagu.forEach((lagu) => {
-        const judulLagu = `${artis.nama} - ${lagu}`;
-
+      const judulLagu = `${artis.nama} - ${lagu}`;
         fs.writeFile(judulLagu, "", (err) => {
-            if (err) {
-                console.log("Gagal buat file");
-                return;
-            }
-
-            console.log(`Berhasil buat file ${judulLagu}`);
-        });
+        if (err) {
+          console.log("Gagal buat file");
+          return;
+        }
+        console.log(
+          `Berhasil buat file ${judulLagu}`
+        );
+      });
     });
-});
+  });
+}
+
+module.exports = {
+  musik,
+  createMusicFiles
+};
