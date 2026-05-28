@@ -33,6 +33,13 @@ const musik = [
     }
 ];
 
+/**
+ * Creates empty music files
+ * based on artist and song names.
+ *
+ * @returns {void}
+ */
+
 function createMusicFiles() {
   musik.forEach((artis) => {
     artis.lagu.forEach((lagu) => {
